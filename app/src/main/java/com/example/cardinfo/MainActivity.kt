@@ -1,18 +1,16 @@
 package com.example.cardinfo
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.widget.Button
-import android.widget.EditText
-import android.widget.ImageButton
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.PackageManagerCompat.LOG_TAG
 import model.ApiInterface
 import model.CardInfo
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+
 
 class MainActivity : AppCompatActivity() {
     private var etEnterCardNumber: EditText? = null
@@ -99,4 +97,27 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putString("tvVisa", tvVisa!!.text.toString())
+        outState.putString("tvCredit", tvCredit!!.text.toString())
+        outState.putString("tvPrepaidType", tvPrepaidType!!.text.toString())
+        outState.putString("tvRealCardNumber", tvRealCardNumber!!.text.toString())
+        outState.putString("tvCountryName", tvCountryName!!.text.toString())
+        outState.putString("tvBrandName", tvBrandName!!.text.toString())
+        outState.putString("tvBankInfo", tvBankInfo!!.text.toString())
+    }
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        super.onRestoreInstanceState(savedInstanceState)
+        tvVisa!!.text = savedInstanceState.getString("tvVisa")
+        tvCredit!!.text = savedInstanceState.getString("tvCredit")
+        tvPrepaidType!!.text = savedInstanceState.getString("tvPrepaidType")
+        tvRealCardNumber!!.text = savedInstanceState.getString("tvRealCardNumber")
+        tvCountryName!!.text = savedInstanceState.getString("tvCountryName")
+        tvBrandName!!.text = savedInstanceState.getString("tvBrandName")
+        tvBankInfo!!.text = savedInstanceState.getString("tvBankInfo")
+    }
+
 }
