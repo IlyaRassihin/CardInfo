@@ -1,5 +1,13 @@
 <resources>
     <string name="app_name">CardInfo</string>
-    <string name="enter_card_number">Enter card number (6-8 symbols)</string>
+    <string name="enter_card_number">Enter card number (6–8 symbols)</string>
     <string name="btn_get_info">Get Info</string>
+    <string name="scheme_network">SCHEME/NETWORK</string>
+    <string name="card_type">TYPE</string>
+    <string name="prepaid">PREPAID</string>
+    <string name="brand">BRAND</string>
+    <string name="card_number">CARD NUMBER</string>
+    <string name="country">COUNTRY</string>
+    <string name="bank">BANK</string>
+    <string name="bank_info">bank_info</string>
 </resources>

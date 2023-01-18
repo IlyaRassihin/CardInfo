@@ -10,22 +10,22 @@
         android:id="@+id/et_enter_card_number"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="204dp"
         android:layout_marginStart="@dimen/marginSmall"
+        android:layout_marginTop="@dimen/marginTop"
         android:layout_marginEnd="@dimen/marginBig"
+        android:gravity="center"
         android:hint="@string/enter_card_number"
         android:maxLines="1"
-        android:gravity="center"
         android:singleLine="true"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="0dp" />
+        tools:layout_editor_absoluteX="16dp" />
 
     <androidx.appcompat.widget.AppCompatImageButton
         android:id="@+id/btn_enter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/marginSmall"
-        android:layout_marginTop="204dp"
+        android:layout_marginTop="@dimen/marginTop"
         android:background="@color/white"
         android:src="@drawable/ic_baseline_subdirectory_arrow_right_24"
         app:layout_constraintEnd_toEndOf="parent"
@@ -33,20 +33,192 @@
         app:layout_constraintStart_toEndOf="@+id/et_enter_card_number"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:id="@+id/constraint_start_18"
+        app:layout_constraintGuide_begin="18dp"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:id="@+id/constraint_start_162"
+        app:layout_constraintGuide_begin="162dp"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:id="@+id/constraint_start_362"
+        app:layout_constraintGuide_begin="270dp"/>
+
+    <TextView
+        android:id="@+id/tv_scheme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="42dp"
+        android:text="@string/scheme_network"
+        android:textSize="@dimen/textSIze_14"
+        app:layout_constraintStart_toStartOf="@id/constraint_start_18"
+        app:layout_constraintTop_toBottomOf="@+id/et_enter_card_number"
+        tools:text="@string/scheme_network" />
+
+    <TextView
+        android:id="@+id/tv_card_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="42dp"
+        android:text="@string/card_type"
+        android:textSize="@dimen/textSIze_14"
+        app:layout_constraintBaseline_toBaselineOf="@id/tv_scheme"
+        app:layout_constraintStart_toStartOf="@id/constraint_start_162"
+        app:layout_constraintTop_toBottomOf="@+id/et_enter_card_number"
+        tools:text="@string/card_type" />
+
+    <TextView
+        android:id="@+id/tv_prepaid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="@string/prepaid"
+        android:textSize="@dimen/textSIze_14"
+        app:layout_constraintBaseline_toBaselineOf="@id/tv_scheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/constraint_start_362"
+        app:layout_constraintTop_toBottomOf="@+id/et_enter_card_number"
+        app:layout_constraintHorizontal_bias="0"
+        tools:text="@string/prepaid" />
+
+    <TextView
+        android:id="@+id/tv_visa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:textSize="@dimen/textSize_16"
+        app:layout_constraintStart_toStartOf="@id/constraint_start_18"
+        app:layout_constraintTop_toBottomOf="@+id/tv_scheme"
+        tools:text="Mastercard" />
+
+
+    <TextView
+        android:id="@+id/tv_credit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:textSize="@dimen/textSize_16"
+        app:layout_constraintBaseline_toBaselineOf="@id/tv_visa"
+        app:layout_constraintStart_toStartOf="@id/constraint_start_162"
+        app:layout_constraintTop_toBottomOf="@+id/tv_card_type"
+        tools:text="Credit" />
+
+    <TextView
+        android:id="@+id/tv_prepaid_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:textSize="@dimen/textSize_16"
+        app:layout_constraintBaseline_toBaselineOf="@id/tv_visa"
+        app:layout_constraintStart_toStartOf="@id/constraint_start_362"
+        app:layout_constraintTop_toBottomOf="@+id/tv_prepaid"
+        tools:text="Yes" />
+
+    <TextView
+        android:id="@+id/tv_card_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:text="@string/card_number"
+        android:textSize="@dimen/textSIze_14"
+        app:layout_constraintStart_toStartOf="@id/constraint_start_18"
+        app:layout_constraintTop_toBottomOf="@+id/tv_scheme"
+        tools:text="@string/card_number" />
+
+    <TextView
+        android:id="@+id/tv_brand"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:text="@string/brand"
+        android:textSize="@dimen/textSIze_14"
+        app:layout_constraintBaseline_toBaselineOf="@id/tv_card_number"
+        app:layout_constraintStart_toStartOf="@id/constraint_start_162"
+        app:layout_constraintTop_toBottomOf="@+id/tv_card_type"
+        tools:text="@string/brand" />
+
+    <TextView
+        android:id="@+id/tv_country"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:text="@string/country"
+        android:textSize="@dimen/textSIze_14"
+        app:layout_constraintBaseline_toBaselineOf="@id/tv_card_number"
+        app:layout_constraintStart_toStartOf="@id/constraint_start_362"
+        app:layout_constraintTop_toBottomOf="@+id/tv_prepaid"
+        tools:text="@string/country" />
+
+    <TextView
+        android:id="@+id/tv_real_card_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:textSize="@dimen/textSize_16"
+        app:layout_constraintStart_toStartOf="@id/constraint_start_18"
+        app:layout_constraintTop_toBottomOf="@+id/tv_card_number"
+        tools:text="Length:16\nLuhn: Yes" />
+
+    <TextView
+        android:id="@+id/tv_brand_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:lines="2"
+        android:textSize="@dimen/textSize_16"
+        app:layout_constraintBaseline_toBaselineOf="@id/tv_real_card_number"
+        app:layout_constraintStart_toStartOf="@id/constraint_start_162"
+        app:layout_constraintTop_toBottomOf="@+id/tv_brand"
+        tools:text="Visa/Dankort" />
+
+    <TextView
+        android:id="@+id/tv_country_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:textSize="@dimen/textSize_16"
+        app:layout_constraintBaseline_toBaselineOf="@id/tv_real_card_number"
+        app:layout_constraintStart_toStartOf="@id/constraint_start_362"
+        app:layout_constraintTop_toBottomOf="@+id/tv_country"
+        tools:text="dk Denmark\nLatitude: 10\nLongitude: 16" />
+
+    <TextView
+        android:id="@+id/tv_bank"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="96dp"
+        android:text="@string/bank"
+        android:textSize="@dimen/textSIze_14"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.47"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_brand" />
+
+    <TextView
+        android:id="@+id/tv_bank_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:textSize="@dimen/textSize_16"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.46"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_bank"
+        tools:text="Jyske Bank, Hjørring\nwww.jyskebank.dk\n+4589893300" />
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-    <!--
-    <Button
-        android:id="@+id/btn_get_weather"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
-        android:backgroundTint="@color/blue"
-        android:text="@string/btn_get_info"
-        android:textColor="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_enter_card_number" />
-    -->
